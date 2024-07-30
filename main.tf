@@ -1,8 +1,14 @@
 provider "local" {}
 
-resource "null_resource" "cat" {
+variable "artifact_content" {
+  description = "Content to be written to the artifact file"
+  type        = string
+  default     = "This is an artifact created by Terraform"
+}
+
+resource "null_resource" "example" {
   provisioner "local-exec" {
-    command = "echo 'Meaw meaw meaw meaw woof' > artifact.txt"
+    command = "echo '${var.artifact_content}' > artifact.txt"
   }
 }
 
