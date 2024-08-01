@@ -17,7 +17,7 @@ resource "local_file" "artifact" {
   filename = "${path.module}/artifact.txt"
 }
 
-output "ghost" {
+output "cat_ghost" {
   value = "Ghost meawed successfully!"
 }
 
