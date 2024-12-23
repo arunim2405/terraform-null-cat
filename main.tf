@@ -1,4 +1,3 @@
-provider "local" {}
 
 variable "artifact_content" {
   description = "Content to be written to the artifact file"
