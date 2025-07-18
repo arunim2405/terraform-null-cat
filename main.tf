@@ -27,5 +27,6 @@ output "cat_is_not_ghost" {
 }
 
 output "artifact_content" {
-  value = local_file.artifact.content
+  value     = local_file.artifact.content
+  sensitive = true
 }
