@@ -31,7 +31,7 @@ output "crazy_nested_output" {
     nested = {
       level1 = {
         level2 = {
-          level3 = "This is a deeply nested output"
+          "0498" = "This is a deeply nested output"
         }
       }
     }
