@@ -26,6 +26,19 @@ output "cat_is_not_ghost" {
   value = "Ghost meawed successfully!"
 }
 
+output "crazy_nested_output" {
+  value = {
+    nested = {
+      level1 = {
+        level2 = {
+          level3 = "This is a deeply nested output"
+        }
+      }
+    }
+  }
+
+}
+
 output "artifact_content" {
   value = local_file.artifact.content
 }
