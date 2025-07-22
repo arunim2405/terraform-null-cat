@@ -39,6 +39,15 @@ output "crazy_nested_output" {
 
 }
 
+output "nested_list_output" {
+  value = [
+    "This is a list output",
+    "It contains multiple items",
+    "Each item is a string"
+  ]
+
+}
+
 output "artifact_content" {
   value = local_file.artifact.content
 }
