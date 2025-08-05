@@ -23,7 +23,7 @@ output "cat_ghost" {
 
 
 output "cat_is_not_ghost" {
-  value = "Ghost meawed successfully!"
+  value = "Ghost meawed successfully2!"
 }
 
 output "crazy_nested_output" {
