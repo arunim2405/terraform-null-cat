@@ -12,6 +12,12 @@ resource "null_resource" "example" {
   }
 }
 
+resource "null_resource" "example2" {
+  provisioner "local-exec" {
+    command = "echo '${var.artifact_content}' > artifact2.txt"
+  }
+}
+
 resource "local_file" "artifact" {
   content  = var.artifact_content
   filename = "${path.module}/artifact.txt"
