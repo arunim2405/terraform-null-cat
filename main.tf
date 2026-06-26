@@ -1,5 +1,11 @@
 provider "local" {}
 
+# Runs during `terraform plan` (data sources are read at plan time),
+# so this sleep makes the plan take ~6 minutes (> 5 min) for timeout testing.
+data "external" "slow_plan" {
+  program = ["bash", "-c", "sleep 360 && echo '{}'"]
+}
+
 variable "artifact_content" {
   description = "Content to be written to the artifact file"
   type        = string
