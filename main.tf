@@ -19,6 +19,7 @@ resource "local_file" "artifact" {
 
 output "cat_ghost" {
   value = "Ghost meawed successfully!"
+  sensitive = true
 }
 
 
