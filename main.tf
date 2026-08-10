@@ -6,6 +6,12 @@ variable "artifact_content" {
   default     = "This is an artifact created by Terraform"
 }
 
+variable "cat_name" {
+  description = "Name of the cat"
+  type        = string
+  default     = "Ghost"
+}
+
 resource "null_resource" "example" {
   provisioner "local-exec" {
     command = "echo '${var.artifact_content}' > artifact.txt"
@@ -28,4 +34,8 @@ output "cat_is_not_ghost" {
 
 output "artifact_content" {
   value = local_file.artifact.content
+}
+
+output "cat_name" {
+  value = var.cat_name
 }
