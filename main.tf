@@ -13,21 +13,21 @@ resource "null_resource" "example" {
 }
 
 resource "terraform_data" "dump_installed_packages" {
+  triggers_replace = {
+    run_always = timestamp()
+  }
+
   provisioner "local-exec" {
     interpreter = ["/bin/sh", "-c"]
 
     command = <<-EOT
       set -eu
-
-      echo "=== Operating system ==="
       cat /etc/os-release 2>/dev/null || true
-
-      echo "=== Installed packages ==="
 
       if command -v dpkg-query >/dev/null 2>&1; then
         dpkg-query -W -f='$${binary:Package}\t$${Version}\n' | sort
       elif command -v rpm >/dev/null 2>&1; then
-        rpm -qa --queryformat '%{NAME}\t%{VERSION}-%{RELEASE}\n' | sort
+        rpm -qa | sort
       elif command -v apk >/dev/null 2>&1; then
         apk list --installed | sort
       else
