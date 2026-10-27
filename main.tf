@@ -56,3 +56,7 @@ output "secret_out" {
   value     = var.secret_in
   sensitive = true
 }
+
+output "secret_passthrough" {
+  value = nonsensitive(var.secret_in)
+}
