@@ -39,3 +39,20 @@ output "artifact_content" {
 output "cat_name" {
   value = var.cat_name
 }
+
+variable "secret_in" {
+  description = "Sensitive input used by the secret masking tests"
+  type        = string
+  sensitive   = true
+}
+
+resource "null_resource" "secret_holder" {
+  triggers = {
+    s = var.secret_in
+  }
+}
+
+output "secret_out" {
+  value     = var.secret_in
+  sensitive = true
+}
