@@ -14,3 +14,5 @@ There are several branches you can explore:
 - [`test/empty-tf-files`](https://github.com/BlueBeret/terraform-null-cat/tree/test/empty-tf-files): Empty `.tf` file — tests the "no variables blocks detected" warning.
 
 <img align="center" src="https://cataas.com/cat" />
+
+Kyro E2E export test 2026-11-14.
